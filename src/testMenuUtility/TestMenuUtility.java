@@ -65,7 +65,7 @@ public class TestMenuUtility {
 		if (chooser.showOpenDialog(frame) != JFileChooser.APPROVE_OPTION) {
 			return; // just get out
 		} // if open
-		MenuUtility.addFileItem(mnuFile, chooser.getSelectedFile());
+		MenuUtility.addFileItem(mnuFile, chooser.getSelectedFile(),adapterForTest);
 		log.infof("Added file: %s%n", chooser.getSelectedFile());
 	}// doFileOpen
 
@@ -84,7 +84,7 @@ public class TestMenuUtility {
 			return; // just get out
 		} // if open
 
-		MenuUtility.addFileItem(mnuFile, chooser.getSelectedFile());
+		MenuUtility.addFileItem(mnuFile, chooser.getSelectedFile(),adapterForTest);
 		doFileSave();
 	}// doFileSaveAs
 
@@ -122,7 +122,7 @@ public class TestMenuUtility {
 		splitPane.setDividerLocation(myPrefs.getInt("DividerLocationMain", 500));
 		activeFilePath = myPrefs.get("CurrentPath", DEFAULT_DIRECTORY);
 
-		MenuUtility.loadRecentFileList(myPrefs, mnuFile);
+		MenuUtility.loadRecentFileList(myPrefs, mnuFile,adapterForTest);
 
 	}// appInit
 
